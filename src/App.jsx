@@ -1,6 +1,6 @@
-import { Header } from "./components/Header"
 import { useState, useEffect } from "react"
-
+import { Header } from "./components/Header"
+import { Card } from "./components/Card"
 
 export function App() {
   const [characters, setCharacters] = useState([])
@@ -17,6 +17,27 @@ export function App() {
   return (
     <div className="font-poppins">
       <Header />
+
+      <div className="flex flex-col gap-8 bg-gray-900 p-8">
+        {characters.map(character => {
+          if (!character.name || !character.name || !character.gender || !character.portrayedBy) {
+            return null
+          }
+
+          return <Card
+            key={character._id}
+            characterInfo={{
+              name: character.name,
+              status: character.status,
+              born: character.born,
+              gender: character.gender,
+              portrayedBy: character.portrayedBy,
+              imgUrl: character.photo,
+              aliases: character.aliases,
+            }}
+          />
+        })}
+      </div>
     </div>
   )
 }
