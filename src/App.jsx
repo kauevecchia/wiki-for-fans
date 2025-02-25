@@ -1,5 +1,11 @@
+import { Header } from "./components/Header"
+
+
 export function App() {
+  
   return (
-    <div></div>
+    <div className="font-poppins">
+      <Header />
+    </div>
   )
 }
