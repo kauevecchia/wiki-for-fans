@@ -2,8 +2,8 @@
 export function Card({ characterInfo, toggleModal}) {
     return (
         <div className="flex flex-col gap-4 p-4 bg-black shadow-darkish-red rounded-md cursor-pointer hover:scale-110 transition duration-500" onClick={() => toggleModal(characterInfo)}>
-            <div className="w-full h-72">
-                <img src={characterInfo.imgUrl} alt="" className="w-full h-full object-cover object-top rounded-md"/> 
+            <div className="w-full h-72 flex items-center justify-center">
+                <img src={characterInfo.imgUrl} alt={`${characterInfo.name} photo`} className="w-64 h-64 object-cover object-top rounded-md" />
             </div>
             
             <div>
