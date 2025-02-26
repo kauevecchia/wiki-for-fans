@@ -7,10 +7,10 @@ export function Card({ characterInfo, toggleModal}) {
             </div>
             
             <div>
-                <p className="text-white font-bold">Name: <span className="font-baskerville text-red-600 font-normal ml-1">{characterInfo.name}</span></p>
-                <p className="text-white font-bold">Status: <span className="font-baskerville text-red-600 font-normal ml-1">{characterInfo.status}</span></p>
-                <p className="text-white font-bold">Gender: <span className="font-baskerville text-red-600 font-normal ml-1">{characterInfo.gender}</span></p>
-                <p className="text-white font-bold">Portrayed By: <span className="font-baskerville text-red-600 font-normal ml-1">{characterInfo.portrayedBy}</span></p>
+                <p className="text-red-600 font-bold">Name: <span className="font-baskerville text-white font-normal ml-1">{characterInfo.name}</span></p>
+                <p className="text-red-600 font-bold">Status: <span className="font-baskerville text-white font-normal ml-1">{characterInfo.status}</span></p>
+                <p className="text-red-600 font-bold">Gender: <span className="font-baskerville text-white font-normal ml-1">{characterInfo.gender}</span></p>
+                <p className="text-red-600 font-bold">Portrayed By: <span className="font-baskerville text-white font-normal ml-1">{characterInfo.portrayedBy}</span></p>
             </div>
         </div>
     )
