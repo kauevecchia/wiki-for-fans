@@ -5,13 +5,13 @@ export function Modal({ selectedCharacter, toggleModal }) {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-black p-4 md:p-8 rounded-md flex items-center justify-center flex-col">
+            <div className="bg-zinc-900 p-4 md:p-8 rounded-md flex items-center justify-center flex-col">
                 <div>
                     <img src={selectedCharacter.imgUrl} alt={`${selectedCharacter.name} photo`} className="rounded-lg"/>
                 </div>
 
                 <div>
-                    <h1>Character Information</h1>
+                    <h1 className="text-white pb-3 pt-6 font-bold text-2xl">Character Information:</h1>
                     <p className="text-red-600 font-bold">Name: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.name}</span></p>
                     <p className="text-red-600 font-bold">Status: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.status}</span></p>
                     <p className="text-red-600 font-bold">Gender: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.gender}</span></p>
