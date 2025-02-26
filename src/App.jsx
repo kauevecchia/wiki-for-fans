@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Header } from "./components/Header"
 import { Card } from "./components/Card"
 import { Footer } from "./components/Footer"
+import { Modal } from "./components/Modal"
 
 export function App() {
   const [characters, setCharacters] = useState([])
@@ -54,6 +55,11 @@ export function App() {
           })}
         </div>
       </main>
+
+      {isModalOpen && <Modal
+        selectedCharacter={selectedCharacter}
+        toggleModal={toggleModal}
+      />}
 
       <Footer />
     </div>
