@@ -1,10 +1,17 @@
 import charactersDescription from "../data/charactersDescription.json"
+import { motion } from "framer-motion"
 
 export function Modal({ selectedCharacter, toggleModal }) {
     const description = charactersDescription[selectedCharacter.name]
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+        >
             <div className="bg-zinc-900 p-4 md:p-8 rounded-md flex items-center justify-center flex-col max-w-xl">
                 <div>
                     <img src={selectedCharacter.imgUrl} alt={`${selectedCharacter.name} photo`} className="rounded-lg max-h-72"/>
@@ -24,6 +31,6 @@ export function Modal({ selectedCharacter, toggleModal }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

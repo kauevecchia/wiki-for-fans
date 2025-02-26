@@ -4,6 +4,7 @@ import { Card } from "./components/Card"
 import { Footer } from "./components/Footer"
 import { Modal } from "./components/Modal"
 import { Loading } from "./components/Loading"
+import { AnimatePresence } from "framer-motion"
 
 export function App() {
   const [characters, setCharacters] = useState([])
@@ -63,10 +64,12 @@ export function App() {
         )} 
       </main>
 
-      {isModalOpen && <Modal
-        selectedCharacter={selectedCharacter}
-        toggleModal={toggleModal}
-      />}
+      <AnimatePresence>
+        {isModalOpen && <Modal
+          selectedCharacter={selectedCharacter}
+          toggleModal={toggleModal}
+        />}
+      </AnimatePresence>
 
       {loading && <Loading />}
 
