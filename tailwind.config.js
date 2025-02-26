@@ -6,6 +6,9 @@ export default {
             fontFamily: {
                 poppins: ['Poppins', 'sans-serif'],
                 baskerville: ['Libre Baskerville', 'serif'],
+            },
+            boxShadow: {
+                'darkish-red': '6px 6px 10px rgba(239, 68, 68, 0.25)',
             }
         },
     },
