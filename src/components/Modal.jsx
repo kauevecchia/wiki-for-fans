@@ -16,7 +16,7 @@ export function Modal({ selectedCharacter, toggleModal }) {
                     <p className="text-red-600 font-bold">Status: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.status}</span></p>
                     <p className="text-red-600 font-bold">Gender: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.gender}</span></p>
                     <p className="text-red-600 font-bold">Portrayed By: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.portrayedBy}</span></p>
-                    <p className="text-red-600 font-bold">Born: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.born}</span></p>
+                    <p className="text-red-600 font-bold">Born: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.born === undefined ? "unknown" : selectedCharacter.born}</span></p>
                     <p className="text-red-600 font-bold">Aliases: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.aliases}</span></p>
                     <p className="text-red-600 font-bold">Description: <span className="font-baskerville text-white font-normal ml-1">{description}</span></p>
                     <div className="flex items-center justify-center ">
