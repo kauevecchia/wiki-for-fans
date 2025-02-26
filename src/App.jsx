@@ -5,6 +5,8 @@ import { Footer } from "./components/Footer"
 
 export function App() {
   const [characters, setCharacters] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedCharacter, setSelectedCharacter] = useState({})
 
   useEffect(() => {
     fetch('https://stranger-things-api.fly.dev/api/v1/characters/?perPage=108')
