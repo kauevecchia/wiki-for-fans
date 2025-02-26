@@ -17,6 +17,16 @@ export function App() {
       })
   }, [])
 
+  const toggleModal = (characterInfo) => {
+    if (isModalOpen) {
+      setIsModalOpen(false)
+      setSelectedCharacter({})
+    } else {
+      setSelectedCharacter(characterInfo)
+      setIsModalOpen(true)
+    }
+  }
+
   return (
     <div className="font-poppins">
       <Header />
