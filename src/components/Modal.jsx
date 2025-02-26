@@ -5,9 +5,9 @@ export function Modal({ selectedCharacter, toggleModal }) {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-zinc-900 p-4 md:p-8 rounded-md flex items-center justify-center flex-col">
+            <div className="bg-zinc-900 p-4 md:p-8 rounded-md flex items-center justify-center flex-col max-w-xl">
                 <div>
-                    <img src={selectedCharacter.imgUrl} alt={`${selectedCharacter.name} photo`} className="rounded-lg"/>
+                    <img src={selectedCharacter.imgUrl} alt={`${selectedCharacter.name} photo`} className="rounded-lg max-h-72"/>
                 </div>
 
                 <div>
