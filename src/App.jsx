@@ -3,6 +3,7 @@ import { Header } from "./components/Header"
 import { Card } from "./components/Card"
 import { Footer } from "./components/Footer"
 import { Modal } from "./components/Modal"
+import { Loading } from "./components/Loading"
 
 export function App() {
   const [characters, setCharacters] = useState([])
@@ -38,12 +39,7 @@ export function App() {
 
       <main className="flex flex-col items-center justify-center gap-10 bg-zinc-900 px-8 py-16 flex-grow">
 
-        {loading ? (
-          <div className="h-screen flex justify-center items-center gap-4">
-            <p className="text-white">Loading</p>
-            <div className="w-12 h-12 border-t-4 border-red-600 border-solid rounded-full animate-spin"></div>
-          </div>
-        ) : (
+        {!loading && (
           <div className="max-w-7xl grid md:grid-cols-3 lg:grid-cols-4 gap-12">
             {characters.map(character => {
               if (!character.name || !character.name || !character.gender || !character.portrayedBy) {
@@ -64,13 +60,15 @@ export function App() {
               />
             })}
           </div>
-        )}
+        )} 
       </main>
 
       {isModalOpen && <Modal
         selectedCharacter={selectedCharacter}
         toggleModal={toggleModal}
       />}
+
+      {loading && <Loading />}
 
       <Footer />
     </div>
