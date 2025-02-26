@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Header } from "./components/Header"
 import { Card } from "./components/Card"
+import { Footer } from "./components/Footer"
 
 export function App() {
   const [characters, setCharacters] = useState([])
@@ -18,26 +19,28 @@ export function App() {
     <div className="font-poppins">
       <Header />
 
-      <div className="flex flex-col gap-8 bg-gray-900 p-8">
-        {characters.map(character => {
-          if (!character.name || !character.name || !character.gender || !character.portrayedBy) {
-            return null
-          }
+      <main className="flex flex-col items-center justify-center gap-10 bg-zinc-900 px-8 py-16">
 
-          return <Card
-            key={character._id}
-            characterInfo={{
-              name: character.name,
-              status: character.status,
-              born: character.born,
-              gender: character.gender,
-              portrayedBy: character.portrayedBy,
-              imgUrl: character.photo,
-              aliases: character.aliases,
-            }}
-          />
-        })}
-      </div>
+        <div className="max-w-7xl">
+          {characters.map(character => {
+            if (!character.name || !character.name || !character.gender || !character.portrayedBy) {
+              return null
+            }
+            return <Card
+              key={character._id}
+              characterInfo={{
+                name: character.name,
+                status: character.status,
+                born: character.born,
+                gender: character.gender,
+                portrayedBy: character.portrayedBy,
+                imgUrl: character.photo,
+                aliases: character.aliases,
+              }}
+            />
+          })}
+        </div>
+      </main>
     </div>
   )
 }
