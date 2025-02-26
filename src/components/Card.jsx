@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-export function Card({ characterInfo }) {
+export function Card({ characterInfo, toggleModal}) {
     return (
-        <div className="flex flex-col gap-4 p-4 bg-black shadow-darkish-red rounded-md">
+        <div className="flex flex-col gap-4 p-4 bg-black shadow-darkish-red rounded-md cursor-pointer" onClick={() => toggleModal(characterInfo)}>
             <div className="w-full h-72">
                 <img src={characterInfo.imgUrl} alt="" className="w-full h-full object-cover object-top rounded-md"/> 
             </div>

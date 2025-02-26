@@ -40,6 +40,7 @@ export function App() {
             }
             return <Card
               key={character._id}
+              toggleModal={toggleModal}
               characterInfo={{
                 name: character.name,
                 status: character.status,
