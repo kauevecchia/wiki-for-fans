@@ -24,7 +24,12 @@ export function Modal({ selectedCharacter, toggleModal }) {
                     <p className="text-red-600 font-bold">Gender: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.gender}</span></p>
                     <p className="text-red-600 font-bold">Portrayed By: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.portrayedBy}</span></p>
                     <p className="text-red-600 font-bold">Born: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.born === undefined ? "unknown" : selectedCharacter.born}</span></p>
-                    <p className="text-red-600 font-bold">Aliases: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.aliases}</span></p>
+                    <p className="text-red-600 font-bold">Aliases: <span className="font-baskerville text-white font-normal ml-1">{selectedCharacter.aliases.map(alias => {
+                        if (alias === selectedCharacter.aliases[selectedCharacter.aliases.length - 1]) {
+                            return ` ${alias}.`
+                        }
+                        return ` ${alias},`
+                    })}</span></p>
                     <p className="text-red-600 font-bold">Description: <span className="font-baskerville text-white font-normal ml-1">{description}</span></p>
                     <div className="flex items-center justify-center ">
                         <button className="py-2 px-4 bg-red-600 rounded-md font-bold text-center mt-4 mx-auto hover:bg-red-800 transition duration-500" onClick={toggleModal}>Close</button>
