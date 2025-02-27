@@ -43,7 +43,7 @@ export function App() {
         {!loading && (
           <div className="max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
             {characters.map(character => {
-              if (!character.name || !character.name || !character.gender || !character.portrayedBy) {
+              if (!character.name || !character.gender || !character.portrayedBy) {
                 return null
               }
               return <Card
